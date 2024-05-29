@@ -14,11 +14,11 @@ public class Main {
         //userDB.deleteUser(4);
 
         // ---------- Hibernate Query Language --------- \\
-        userDB.findUserHql();
-        userDB.getRecordById();
-        userDB.getRecords();
-        userDB.getMaxSalary();
-        userDB.getMaxSalaryGroupBy();
-        userDB.namedQueryExample();
+//        userDB.findUserHql();
+//        userDB.getRecordById();
+//        userDB.getRecords();
+//        userDB.getMaxSalary();
+//        userDB.getMaxSalaryGroupBy();
+//        userDB.namedQueryExample();
     }
 }
