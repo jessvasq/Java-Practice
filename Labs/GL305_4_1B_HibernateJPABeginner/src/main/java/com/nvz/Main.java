@@ -9,6 +9,7 @@ public class Main {
         UserController userDB = new UserController();
         //userDB.createTable();
         //userDB.addUser();
-        userDB.findUser(2);
+        //userDB.findUser(2);
+        userDB.updateUser(3);
     }
 }

@@ -78,10 +78,25 @@ public class UserController {
         session.close();
     }
 
-//    findUser(factory,session,3);
-//
-//    updateUser(session,3);
-//
+    /**
+     * Updates user by id
+     * @param userId
+     */
+    public void updateUser(int userId){
+        Session session = connectToDB();
+        Transaction tx = session.beginTransaction();
+        //create new user object
+        User u = new User();
+        u.setId(userId);
+        u.setEmail("mhaseeb@perscholas");
+        u.setFullName("M Haseeb");
+        u.setPassword("123456");
+        session.merge(u); //saves modifications at any time without knowing about the state of a session
+        session.getTransaction().commit();
+        session.close();
+    }
+
+
 //    deleteUser(session,4);
 
 }
