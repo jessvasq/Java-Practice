@@ -10,8 +10,8 @@
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://localhost:3306/usersDb?createDatabaseIfNotExist=true</property>
-        <property name="connection.username"></property>
-        <property name="connection.password"></property>
+        <property name="connection.username">********</property>
+        <property name="connection.password">************</property>
 
         <!-- MySQL DB dialect -->
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -20,7 +20,7 @@
         <property name="hibernate.format_sql" >true </property>
 
         <!--   Mapping entity file -->
-        <mapping class="model.User"/>
+        <mapping class="com.nvz.model.User"/>
 
     </session-factory>
 </hibernate-configuration>
