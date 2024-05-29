@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
         UserController userDB = new UserController();
         //userDB.createTable();
-        userDB.addUser();
+        //userDB.addUser();
+        userDB.findUser(2);
     }
 }

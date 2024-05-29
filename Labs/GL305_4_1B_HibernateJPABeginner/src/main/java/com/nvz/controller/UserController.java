@@ -60,8 +60,24 @@ public class UserController {
         session.close();
     }
 
-//    addUser(factory,session);
-//
+    /**
+     * returns an object of the specified class that maps a row in the database table. If no row is found, it returns null
+     * @param userId
+     */
+    public void findUser(int userId){
+        Session session = connectToDB();
+        Transaction tx = session.beginTransaction();
+
+        User u = session.get(User.class, userId);
+        System.out.println("FullName: " + u.getFullName());
+        System.out.println("Email: " + u.getEmail());
+        System.out.println("password: " + u.getPassword());
+
+        //Close resources
+        tx.commit();
+        session.close();
+    }
+
 //    findUser(factory,session,3);
 //
 //    updateUser(session,3);
