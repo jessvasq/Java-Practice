@@ -96,7 +96,19 @@ public class UserController {
         session.close();
     }
 
+    /**
+     * Deletes user by ID
+     * @param userId
+     */
+    public void deleteUser(int userId){
+        Session session = connectToDB();
+        Transaction tx = session.beginTransaction();
 
-//    deleteUser(session,4);
+        User u = new User();
+        u.setId(userId);
+        session.remove(u); //removes a mapped object from the database
+        tx.commit();
+        session.close();
+    }
 
 }

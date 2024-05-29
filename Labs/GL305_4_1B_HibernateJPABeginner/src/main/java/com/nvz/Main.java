@@ -10,6 +10,7 @@ public class Main {
         //userDB.createTable();
         //userDB.addUser();
         //userDB.findUser(2);
-        userDB.updateUser(3);
+        //userDB.updateUser(3);
+        userDB.deleteUser(4);
     }
 }
