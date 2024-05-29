@@ -7,6 +7,7 @@ import com.nvz.controller.UserController;
 public class Main {
     public static void main(String[] args) {
         UserController userDB = new UserController();
-        userDB.createTable();
+        //userDB.createTable();
+        userDB.addUser();
     }
 }
