@@ -1,9 +1,12 @@
 package com.nvz.controller;
 import com.nvz.model.User;
+import jakarta.persistence.TypedQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+
+import java.util.List;
 
 public class UserController {
     public void createTable(){
@@ -111,4 +114,93 @@ public class UserController {
         session.close();
     }
 
+    // ----- Hibernate Query Language -----
+    // FROM & SELECT clause
+    public void findUserHql(){
+        Session session = connectToDB();
+        String hqlFrom = "FROM User"; //get all records of User class
+        String hqlSelect = "SELECT u FROM User u";
+        //Using FROM clause
+       //TypedQuery<User> query = session.createQuery(hqlFrom, User.class);
+
+        //Using SELECT clause
+        TypedQuery<User> query = session.createQuery(hqlSelect, User.class);
+
+        List<User> results = query.getResultList();
+
+        System.out.printf("%s%13s%17s%34s%n","|User Id","|Full name","|Email","|Password");
+
+        //iterate through the results list
+        for (User u:results) {
+            System.out.printf("%-10d %-20s %-30s %s %n", u.getId(), u.getFullName(), u.getEmail(), u.getPassword());
+        }
+    }
+
+    // WHERE and ORDER BY clause
+    public void getRecordById(){
+        Session session = connectToDB();
+        String hql = "FROM User u WHERE u.id > 2 ORDER BY u.salary DESC";
+        TypedQuery<User> query = session.createQuery(hql, User.class);
+        List<User> results = query.getResultList();
+        System.out.printf("%s%13s%17s%34s%21s%n", "|User Id", "|Full name", "|Email", "|Password", "|Salary");
+
+        for (User u : results) {
+            System.out.printf(" %-10d %-20s %-30s %-23s %s %n", u.getId(), u.getFullName(), u.getEmail(), u.getPassword(), u.getSalary());
+        }
+    }
+
+    // multiple SELECT expressions
+    public void getRecords(){
+        Session session = connectToDB();
+        TypedQuery<Object[]> query = session.createQuery(
+                "SELECT u.salary, u.fullName FROM User u", Object[].class);
+
+        //store the query results in the list
+        List<Object[]> results = query.getResultList();
+        System.out.printf("%s%13s%n","Salary","City");
+
+        //iterate through the list of objects
+        for (Object[] o : results){
+            System.out.printf("%-16s%s%n",o[0],o[1]);
+        }
+
+    }
+
+    // Aggregate Function
+    public void getMaxSalary(){
+        Session session = connectToDB();
+        String hql = "SELECT MAX(u.salary) FROM User u";
+        TypedQuery<Object> query = session.createQuery(hql, Object.class);
+        // getSingleResult() executes a SELECT query that returns a single untyped result
+        Object result = query.getSingleResult();
+        System.out.printf("%s%s","Maximum Salary:",result);
+    }
+
+    // GROUP BY clause and Aggregate Function
+    public void getMaxSalaryGroupBy(){
+        Session session = connectToDB();
+        String hql = "SELECT SUM(u.salary), u.city FROM User u GROUP BY u.city";
+        TypedQuery query = session.createQuery(hql);
+        List<Object[]> result = query.getResultList();
+
+        for (Object[] o : result){
+            System.out.println("Total salary " +o[0] +" | city: "+ o[1] );
+        }
+    }
+
+    // named parameters Syntax
+    public void namedQueryExample(){
+        Session session = connectToDB();
+        String hql = "FROM User u WHERE u.id = :id";
+        TypedQuery<User> query = session.createQuery(hql, User.class);
+        query.setParameter("id", 2);
+        List<User> results = query.getResultList();
+
+        System.out.printf("%s%13s%17s%34s%21s%n", "|User Id", "|Full name", "|Email", "|Password", "|Salary");
+
+        for (User u : results) {
+            System.out.printf(" %-10d %-20s %-30s %-23s %s %n", u.getId(), u.getFullName(), u.getEmail(), u.getPassword(), u.getSalary());
+        }
+
+    }
 }
