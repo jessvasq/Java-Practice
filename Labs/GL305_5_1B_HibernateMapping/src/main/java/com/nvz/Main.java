@@ -7,6 +7,7 @@ public class Main {
         DBUtility usersDBObj = new DBUtility();
         //usersDBObj.manyToOne();
         //usersDBObj.oneToMany();
-        usersDBObj.oneToOne();
+        //usersDBObj.oneToOne();
+        usersDBObj.manyToMany();
     }
 }
