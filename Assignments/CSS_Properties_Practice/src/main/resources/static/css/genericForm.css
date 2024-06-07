@@ -1,0 +1,40 @@
+body{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.container{
+    background-color: rgba(255,13,33,0.84);
+    width: 500px;
+    padding: 35px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+input {
+    background-color: rgba(64, 64, 64, .4);
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    text-align: center;
+    color: white;
+}
+
+
+input:nth-child(4) {
+    height: 120px;
+}
+
+button{
+    padding: 10px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    color: red;
+}
