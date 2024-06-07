@@ -1,0 +1,42 @@
+body {
+    display:flex;
+    justify-content: center;
+    text-align: center;
+
+}
+.container {
+    padding: 30px;
+    background-color: rgba(172,175,174,0.84);
+    margin-top: 100px;
+    width: 400px;
+    box-shadow: 8px 5px 5px rgba(43, 36, 36, .2);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 15px;
+    padding: 12px;
+    color: grey;
+    border: none;
+    text-align: center;
+}
+
+button{
+    padding: 10px;
+    background-color: rgba(141,255,250,0.84);
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.container h3{
+    color: orange;
+    font-weight: lighter;
+}
+
+
+
