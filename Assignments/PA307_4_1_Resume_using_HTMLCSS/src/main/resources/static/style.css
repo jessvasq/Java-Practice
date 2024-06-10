@@ -1,0 +1,105 @@
+body {
+    margin:20px;
+}
+
+.main_container{
+    width: 100%;
+
+}
+
+.section1 {
+    justify-content: center;
+}
+
+.inner_section1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box1{
+    display: flex;
+}
+
+.box1_1{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+#position_title{
+    margin-top: -10px ;
+    font-weight: lighter;
+}
+img{
+    height: 120px;
+    width: 120px;
+}
+
+.section2 {
+    display: flex;
+}
+
+.s2_inner_section1 {
+    width: 80%;
+}
+
+h3, h4, h5 {
+    margin: 0;
+}
+
+h3 {
+    background-color: lightgray;
+}
+
+.job_item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.edu_info {
+    margin-top: 4px;
+}
+
+.s2_inner_section {
+    margin-left: 5px;
+}
+
+.progress_bar{
+    width: 100%;
+    border-radius: 10px;
+    height: 10px;
+    margin: 5px;
+    background-color: lightgray;
+}
+
+
+
+.progress, .progress1, .progress2{
+    width: 90%;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 10px;
+    background-color: cadetblue;
+    font-size: 10px;
+    color: white;
+    text-align: center;
+}
+
+.progress1{
+    width: 95%;
+    background-color: green;
+}
+
+.progress2{
+    width: 85%;
+    background-color: red;
+}
+
+.skills_title {
+    font-size: large;
+    margin: 8px 0 10px 0;
+}
+
+ul {
+    margin: 0;
+}
