@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<style>
+    .container_height {
+        height: 100vh;
+    }
+    .img-box {
+        width: 380px;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .img-box img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+
+
+<body>
+    <div class="container-fluid container_height flex-column">
+        <div class="row">
+        <section class="col-2 bg-light d-flex flex-column container_height">
+            <h2 class="font-italic">COMPANY NAME</h2>
+            <div class="mt-2"></div>
+            <h5>Home</h5>
+            <h5>Analytics</h5>
+            <h5>Messages</h5>
+
+            <div class="justify-content-end container_height d-flex flex-column" >
+                    <hr>
+                    <h6>Sign out</h6>
+            </div>
+        </section>
+
+        <section class="col-8">
+            <h2 >Analytics</h2>
+            <div class="row mt-4 h-25">
+                <div class="col-md-8 img-box">
+                    <img src="/static/dashboard_icon2.png" class="image-fluid"  alt="dashboard_icon"/>
+                </div>
+                <div class="col-6 col-md-4">Massa placerat duis ultricies lacus sed turpis. Quis hendrerit dolor magna eget. Sapien faucibus et molestie ac feugiat sed. Sed nisi lacus sed viverra. Vehicula ipsum a arcu cursus vitae. Sit amet est placerat in egestas erat. </div>
+            </div>
+
+            <hr>
+
+            <div class="row mt-4 h-25">
+                <div class="col-6 col-md-4 ">
+                    <img src="/static/dashboard_icon1.png" class="image-fluid"  alt="dashboard_icon"/>
+                </div>
+                <div class="col-6 col-md-4">Massa placerat duis ultricies lacus sed turpis. Quis hendrerit dolor magna eget. Sapien faucibus et molestie ac feugiat sed. Sed nisi lacus sed viverra.</div>
+                <div class="col-6 col-md-4 ">
+                    <img src="/static/dashboard_icon2.png"  class="image-fluid" alt="dashboard_icon"/>
+                </div>
+            </div>
+            <hr>
+
+            <div class="row mt-4 h-25">
+                <div class="col-6 img-box">
+                    <img src="/static/dashboard_icon3.png" class="image-fluid"  alt="dashboard_icon"/>
+                </div>
+
+                <div class="col-6 img-box">
+                    <img src="/static/dashboard_icon4.png" class="image-fluid"  alt="dashboard_icon"/>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="col-2 bg-light text-left">
+           <h3 class="mb-4">Notifications</h3>
+            <div class="row mt-2 ">
+                <h5 class="text-md">Account Name</h5>
+                <h6 class="text-sm">Description</h6>
+                <hr>
+            </div>
+
+            <div class="row mt-2">
+                <h5 class="text-md">Account Name</h5>
+                <h6 class="text-sm">Description</h6>
+                <hr>
+            </div>
+
+            <div class="row mt-2">
+                <h5 class="text-md">Account Name</h5>
+                <h6 class="text-sm">Description</h6>
+                <hr>
+            </div>
+
+        </section>
+        </div>
+    </div>
+</body>
+</html>
