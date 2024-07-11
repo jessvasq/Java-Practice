@@ -35,10 +35,13 @@ public class FileController {
         }
     }
 
+    // handler to upload multiple files, the difference is that it has MultipartFile[] as an argument
     @PostMapping("/uploadFiles")
     //MultipartFile is an object that has the file and its metadata details
     public String uploadFiles(@RequestParam("files") MultipartFile[] files, RedirectAttributes redirectAttributes) throws IOException {
-        Arrays.asList(files).stream().forEach(file -> fileService.uploadFile(file));
+        Arrays.asList(files)
+                .stream()
+                .forEach(file -> fileService.uploadFile(file));
         redirectAttributes.addFlashAttribute("message", "File uploaded");
         return "redirect:/";
     }
